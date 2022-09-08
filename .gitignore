@@ -3,4 +3,5 @@ dist/*
 !dist/index.php
 node_modules/
 *.log
-
+wp-admin/
+wp-includes/
