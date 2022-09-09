@@ -1,0 +1,50 @@
+/* ~~~~~~~~~~ Bootstrap ~~~~~~~~~~ */
+
+// Global Variables and Mixins are defined in the
+// "sass-resource-loader" in webpack.config.js
+
+// You can add particular components here
+// see: https://getbootstrap.com/docs/5.0/customize/sass/#importing
+
+//@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/bootstrap-reboot.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap-utilities.scss";
+
+//@import "../../node_modules/font-awesome/scss/font-awesome.scss"; //font-awesome/scss/font-awesome.scss 
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/regular.scss";
+
+@import "settings/bootstrap-override";
+
+/* ~~~~~~~~~~ General ~~~~~~~~~~ */
+@import "settings/variables";
+
+
+/* ~~~~~~~~~~ Fonts ~~~~~~~~~~ */
+@import "fonts/fonts";
+
+
+/* ~~~~~~~~~~ Generic ~~~~~~~~~~ */
+@import "generic/mixins";
+@import "generic/general";
+@import "generic/typography";
+@import "generic/utilities";
+
+
+/* ~~~~~~~~~~ General ~~~~~~~~~~ */
+@import "partials/header";
+@import "partials/section";
+@import "partials/footer";
+
+
+/* ~~~~~~~~~~ Components ~~~~~~~~~~ */
+@import "components/buttons";
+// @import "components/modal";
+
+
+/* ~~~~~~~~~~ page-templates ~~~~~~~~~~ */
+@import "templates/home/home";
+

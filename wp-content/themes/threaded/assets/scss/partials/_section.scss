@@ -1,0 +1,253 @@
+.section {
+  width: 100%;
+
+  h2 {
+    color: $black;
+    font-weight: 800;
+    margin: 1em 0;
+    @include fontSize(34);
+  }
+
+  p {
+    font-weight: 400;
+    @include fontSize(13);
+    @include lineHeight(17);
+  }
+
+  &-hero {
+    width: 100%;
+    height: 650px;
+    position: relative;
+
+    .shop-now {
+      z-index: $zindex-sticky;
+      top: 80%;
+      right: 20%;
+    }
+  }
+
+  &-wide-deals {
+    width: 100%;
+    min-height: 150px;
+    background-color: $white;
+
+    .list-items {
+      &__item {
+        color: $black;
+
+        .h5 {
+          text-transform: uppercase;
+          font-weight: 600;
+          @include fontSize(30);
+
+          span {
+            font-weight: 800;
+            margin-left: 10px;
+            @include fontSize(17);
+          }
+        }
+
+        .caption {
+          text-transform: uppercase;
+          font-weight: 400;          
+          @include fontSize(10);
+        }
+      }
+    }
+  }
+
+  &-vip-exclusive {
+    padding-top: 18px;
+    min-height: 75px;
+    background-image: url('/assets/img/bg-vip-exclusive.jpg');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .h3 {
+      font-weight: 800;
+      @include fontSize(30);
+      color: $white;
+    }
+
+    .h5 {
+      font-weight: 600;
+      @include fontSize(17);
+      color: $white;
+    }
+  }
+
+  &-trending {
+    background-color: $white;
+
+    &-inner {
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+
+    .category-list {
+      &__img {
+        max-width: 100%;
+      }
+
+      &__title{
+        font-weight: 600;
+        margin: 10px 0;
+        @include fontSize(22);
+        @include lineHeight(28);
+
+        &--link {
+          color: $black;
+        }
+      }
+    }
+
+    .hashtags {
+      gap: 20px;
+
+      &__item {
+        background: $white;
+        border: 1px solid $black;
+        border-radius: 50px;
+        font-weight: 600;
+        color: $black;
+        padding: 10px 20px;
+        @include fontSize(13);
+        @include lineHeight(16);
+        @include transition();
+
+        &:hover {
+          background-color: $black;
+          color: $white;
+          border: 1px solid $primary;
+        }
+      }
+    }
+
+  }
+
+  &-new-arrivals {
+    width: 100%;
+    height: 400px;
+    background-image: url('/assets/img/bg-new-arrivals.jpg');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px 0;
+
+    .title {
+      color: $white;
+      font-weight: 800;
+      @include fontSize(84);
+      @include lineHeight(84);
+    }
+
+    .subtitle {
+      color: $white;
+      font-weight: 600;
+      @include fontSize(26);
+      @include lineHeight(32);
+    }
+
+  }
+
+  &-recently {
+    width: 100%;
+    background: $white;
+
+    .product {
+      gap: 25px;
+
+      &__item {
+        max-width: 230px;
+
+        &--img{
+          img {
+            max-width: 100%;
+          }
+        }
+
+        &--title{
+          height: 50px;
+          padding: 6px 0;
+          font-weight: 400;
+          @include fontSize(13);
+          @include lineHeight(16);
+
+          a {
+            color: $black;
+          }
+        }
+
+        &--price{
+          margin-top: 6px;
+          font-weight: 600;
+          @include fontSize(14);
+          @include lineHeight(16);
+          gap: 25px;
+
+          .red {
+            color: $red;
+          }
+        }
+      }
+    }
+  }
+
+  &-next-inspo {
+    width: 100%;
+    background-color: $background-inspo;
+
+    .instabox {
+      gap: 20px;
+
+      &__item {
+
+      }
+    }
+  }
+
+  &-newsletter {
+    width: 100%;
+    background-color: $black;
+    padding: 15px 0;
+    font-family: $primaryFont;
+
+    .h3 {
+      color: $white;
+      font-weight: 800;
+      @include fontSize(32);
+      @include lineHeight(38);
+    }
+
+    .newsletter-email {
+      background-color: $background-input;
+      border-radius: 0;
+      font-weight: 400;
+      color: #4D4D4D;
+      @include fontSize(13);
+    }
+
+    .input-group-append {
+      background-color: $white;
+    }
+
+    .btn-outline-secondary {
+      width: 20px;
+      height: 20px;
+      border: none;
+      background-image: url('/assets/img/icons/chevron-right.png');
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-size: 0;
+      margin-top: 8px;
+      margin-left: 4px;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+}
+

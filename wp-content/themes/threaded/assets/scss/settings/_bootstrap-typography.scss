@@ -1,0 +1,41 @@
+$font-family-base: Mulish;
+$body-color: $secondary;
+$body-bg: $dark;
+body {
+  font-family: $font-family-base;
+  color: $secondary;
+  font-size: $font-size-root;
+}
+$h1-font-size: $font-size-base * 2; // 36px
+$h2-font-size: $font-size-base * 2; // 36px
+$h3-font-size: $font-size-base * 1.33; // 24
+$h4-font-size: $font-size-base * 1.33; // 24
+$h5-font-size: $font-size-base * 0.777777; // 24
+$h6-font-size: $font-size-base * 0.777777; // 14
+
+$display-font-sizes: (
+  1: 5rem,
+  2: 4.5rem,
+  3: $font-size-base * 3.5,
+  4: $font-size-base * 2.666666666666667,
+  5: 3rem,
+  6: 2.5rem,
+);
+
+$display-font-weight: bold;
+
+$utilities: (
+  "width": (
+    property: width,
+    class: w,
+    values: (
+      25: 25%,
+      40: 40%,
+      50: 50%,
+      60: 60%,
+      75: 75%,
+      100: 100%,
+      auto: auto,
+    ),
+  ),
+);

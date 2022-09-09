@@ -1,0 +1,41 @@
+.footer {
+  width: 100%;
+  background-color: $white;  
+  padding: 25px 0;
+
+  &__top {
+    margin-top: 25px;
+
+    h4 {
+      padding: 10px 0;
+      color: $black;
+      text-transform: uppercase;
+      font-weight: 600;
+      @include fontSize(13);
+      @include lineHeight(15);
+    }
+
+    ul {
+      li {
+        font-weight: 400;
+        padding: 10px 0;
+        @include fontSize(13);
+        @include lineHeight(15);
+
+        a {
+          color: $black;  
+        }
+      }
+    }
+
+    .social {
+      gap: 20px;
+    }
+  }
+
+  .copyright {
+    font-weight: 400;
+    @include fontSize(12);
+    @include lineHeight(15);
+  }
+}

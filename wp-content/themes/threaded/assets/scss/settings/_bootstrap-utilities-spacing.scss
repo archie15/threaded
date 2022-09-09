@@ -1,0 +1,10 @@
+
+$spacer: 1rem; // 9
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5, // 9 px
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: 50px //$spacer * 2.8,
+);

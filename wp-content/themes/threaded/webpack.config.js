@@ -8,88 +8,109 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const StyleLintPlugin = require("stylelint-webpack-plugin");
 const ImageminPlugin = require("imagemin-webpack-plugin").default;
 const CopyPlugin = require("copy-webpack-plugin");
-const merge  = require('webpack-merge').merge;
+const merge = require('webpack-merge').merge;
 
 const devMode = process.env.NODE_ENV !== 'production';
 const isDevMode = !!devMode;
 
 let config = {
-    mode: devMode ? 'development' : 'production',
-    devtool: isDevMode ? 'source-map' : false,
-    stats: 'minimal',
-    entry: {
-        global: path.resolve(__dirname, './assets/js/index.js'),
-        /** for default page ex. page.php **/
-        default_page: path.resolve(__dirname, './assets/js/page.js'),
-    },
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js'
-    },
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                use: {
-                    loader: 'babel-loader',
-                },
-                exclude: /node_modules/
-            },
-            {
-                test: /\.css$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            importLoaders: 1,
-                            modules: true
-                        }
-                    },
-                    'postcss-loader'
-                ]
-            },
-            {
-                test: /\.scss$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'sass-loader',
-                ]
-            },
-            {
-                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[name].[ext]',
-                            outputPath: 'fonts/'
-                        }
-                    }
-                ]
-            },
-            { 
-                test: /\.(png|jpg|gif)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[path][name].[ext]',
-                            context: path.resolve(__dirname, "src/"),
-                            // outputPath: 'dist/',
-                            // publicPath: '../',
-                            useRelativePaths: true
-                        }
-                    }
-                ] 
+  mode: devMode ? 'development' : 'production',
+  devtool: isDevMode ? 'source-map' : false,
+  stats: 'minimal',
+  entry: {
+    global: path.resolve(__dirname, './assets/js/index.js'),
+    /** for default page ex. page.php **/
+    default_page: path.resolve(__dirname, './assets/js/page.js'),
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].js'
+  },
+  module: {
+    rules: [
+      /* Disabled eslint loader because there is a bug with popperjs that's causing error during prod */
+      // {
+      //     enforce: "pre",
+      //     test: /\.js$/,
+      //     exclude: /node-modules/,
+      //     loader: "eslint-loader"
+      // },
+      {
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+        },
+        exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: true
             }
-      
+          },
+          'postcss-loader'
         ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+          // {
+          //   loader: "sass-resources-loader",
+          //   options: {
+          //       resources: [
+          //         "node_modules/bootstrap/scss/_functions.scss",
+          //         "node_modules/bootstrap/scss/_variables.scss",
+          //         "node_modules/bootstrap/scss/_mixins.scss"
+          //       ],
+          //   },
+          // },
+        ]
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+              context: path.resolve(__dirname, "src/"),
+              // outputPath: 'dist/',
+              // publicPath: '../',
+              useRelativePaths: true
+            }
+          }
+        ]
+      }
+
+    ]
   },
   plugins: [
     new CleanWebpackPlugin('dist'),
     new MiniCssExtractPlugin(),
+    // new StyleLintPlugin({
+    //   context: 'assets',
+    //   syntax: 'scss'
+    // }),
     new ImageminPlugin({
       disable: isDevMode ? true : false,
       externalImages: {
@@ -104,7 +125,7 @@ let config = {
         // BrowserSync Configuration
         host: "localhost",
         port: 3000,
-        proxy: "http://localhost/gamblinglp",
+        proxy: "http://localhost/EHRLICH/threaded",
         files: [
           {
             match: ["**/*.php", "assets/**/*.js", "assets/**/*.{sass,scss}"],
@@ -154,7 +175,7 @@ if (isDevMode) {
       new CopyPlugin({
         patterns: [
           { from: "assets/img", to: "img" },
-          { from: "assets/fonts", to: "fonts "}
+          { from: "assets/fonts", to: "fonts " }
         ],
       })
     ]
@@ -165,7 +186,7 @@ if (isDevMode) {
       new CopyPlugin({
         patterns: [
           { from: "assets/img", to: "img" },
-          { from: "assets/fonts", to: "fonts "}
+          { from: "assets/fonts", to: "fonts " }
         ],
       })
     ]

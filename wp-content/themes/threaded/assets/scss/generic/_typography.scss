@@ -1,0 +1,129 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  font-family: $primaryFont;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+h1,
+.h1 {
+
+  @include fontSize(40);
+  @include lineHeight(50);
+
+  @include media-breakpoint-down(lg) {
+
+    @include fontSize(41);
+    @include lineHeight(50);
+  }
+
+  @include media-breakpoint-down(sm) {
+
+    @include fontSize(26);
+    @include lineHeight(36.5);
+  }
+}
+
+h2,
+.h2 {
+  font-weight: 800;
+  @include fontSize(34);
+  @include lineHeight(44);
+
+  @include media-breakpoint-down(lg) {
+    @include fontSize(34);
+    @include lineHeight(45);
+  }
+
+  @include media-breakpoint-down(sm) {
+    @include fontSize(24);
+    @include lineHeight(36);
+  }
+}
+
+h3,
+.h3 {
+
+  @include fontSize(28);
+  @include lineHeight(31);
+
+  @include media-breakpoint-down(sm) {
+
+    @include fontSize(21);
+    @include lineHeight(31);
+  }
+}
+
+h4,
+.h4 {
+
+  @include fontSize(18);
+  @include lineHeight(21);
+
+  @include media-breakpoint-down(sm) {
+
+    @include fontSize(16);
+    @include lineHeight(20);
+  }
+}
+
+h5,
+.h5 {
+  font-weight: 400;
+
+  @include fontSize(14);
+  @include lineHeight(35);
+}
+
+p,
+.p {
+  font-weight: 400;
+
+  @include fontSize(13);
+  @include lineHeight(25);
+
+  @include media-breakpoint-down(sm) {
+    @include fontSize(12);
+    @include lineHeight(26);
+  }
+}
+
+.large-paragraph {
+
+  p {
+
+    @include fontSize(18);
+    @include lineHeight(36);
+  }
+}
+
+.small-paragraph {
+
+  p {
+    @include fontSize(13);
+    @include lineHeight(20);
+  }
+}
+
+// reset for ul/ol lists
+.nolist {
+  list-style: none;
+}
+
+ul,
+ol {
+  padding-left: 0;
+}
+
+li {
+  @include fontSize(13);
+  @include lineHeight(22);
+}

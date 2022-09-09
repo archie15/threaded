@@ -1,0 +1,95 @@
+// .page-template-template-home {
+//   .header {
+//     &__inner {
+//       background-image: none;
+//       background-color: transparent;
+//     }
+
+//     &--fixed {
+      
+//     }
+//   }
+// }
+
+.header {
+  background-color: $white;
+  min-height: 50px;
+  $this: &;
+  z-index: $zindex-fixed;
+  @include transition();
+
+  &--fixed {
+    z-index: 1030;
+    @include transition();
+
+    #{$this}__topbar {
+      opacity: 0;
+      height: 0;
+      visibility: hidden;
+    }
+  }
+
+  &__nav {
+    .menu-wrapper {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-size: 14px;
+      line-height: 17px;
+      list-style-type: none;
+
+      .menu-item {
+        font-weight: 400;        
+        text-transform: uppercase;
+        display: inline-block;
+        padding: 0 10px;
+      }
+
+      .menu-item.current-menu-item {
+        font-weight: 600;
+      }
+
+      a {
+        color: #000000;
+        text-decoration: none;
+        @include transition();
+
+        &:hover {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  &__logo {
+    width: 100%;
+  }
+
+  &__right {
+    gap: 22px;
+  }
+
+  &-benefits {
+    background: $background-benefits;
+    height: auto;
+
+    &__inner {
+      padding: 10px 0;
+
+      &--item {
+        gap: 10px;
+        
+        .h6 {
+          font-weight: 400;
+          padding-top: 8px;
+          @include fontSize(12);
+          @include lineHeight(14);
+        }
+
+        a {
+          color: $black;
+        }
+      }
+    }
+  }
+
+}

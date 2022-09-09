@@ -1,0 +1,29 @@
+// Override the css of bootstrap, that is why it is called after the bootstrap variables initiation
+@use "sass:map";
+$mdGridBreakpointsMin: map-get($grid-breakpoints, "md");
+
+.modal-fullscreen-md-down .modal-content {
+    height: auto;
+}
+// XS to MD
+@media only screen and (max-width: $mdGridBreakpointsMin) {
+    // Force remove scrollable. Usefull if modal is using fullscreen
+    .modal-dialog-scrollable-none .modal-body {
+        overflow-y: inherit!important;
+    }
+    .modal-dialog-scrollable-none .modal-content {
+        height: auto!important;
+    }
+}
+// MD and up
+@media only screen and (min-width: $mdGridBreakpointsMin) {
+    .modal-dialog-md-scrollable .modal-body {
+        overflow-y: auto;
+    }
+    .modal-dialog-md-scrollable .modal-content {
+        height: 100%;
+    }
+    .modal-dialog-md-scrollable {
+        height: calc(100% - 3.5rem);
+    }
+}

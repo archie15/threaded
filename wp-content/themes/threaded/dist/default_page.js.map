@@ -1,0 +1,1 @@
+{"version":3,"file":"default_page.js","mappings":";;;;;;;;;;;;;;;;;;;;;;ACAA","sources":["webpack://threaded/./assets/js/page.js","webpack://threaded/./assets/scss/page.scss?e61c"],"sourcesContent":["import \"../scss/page.scss\";","// extracted by mini-css-extract-plugin\nexport {};"],"names":[],"sourceRoot":""}

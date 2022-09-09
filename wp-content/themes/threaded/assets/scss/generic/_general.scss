@@ -1,0 +1,79 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $primaryFont;
+  color: #000;
+  margin: 0;
+  background-color: $background-body;
+
+  @include fontSize(14);
+  @include lineHeight(20);
+}
+
+a {
+  color: $navy-blue;
+  text-decoration: none;
+
+  &:hover {
+    color: #1a1a1a;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.site-main {
+  padding-top: 134px; // padding of the website content based on header height because header is fixed
+
+  .page-template-template-home & {
+    padding-top: 134px;
+    overflow: hidden;
+  }
+}
+
+// responsive images support bootstrap
+.img-fluid,
+img[class*="wp-image-"] {
+  max-width: 100%;
+  height: auto;
+}
+
+.opacity-50 {
+  opacity: 50%;
+}
+
+.box-shadow {
+  box-shadow: $box-shadow;
+}
+
+
+.backtop {
+  a {
+    font-weight: 600;
+    color: $dark-600;
+    @include fontSize(15);
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.open {
+  display: block;
+}
+
+.img-object-fit {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.transition {
+  @include transition();
+}

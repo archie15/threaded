@@ -1,0 +1,29 @@
+/*!****************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./assets/scss/page.scss ***!
+  \****************************************************************************************************************/
+/* ~~~~~~~~~~ General ~~~~~~~~~~ */
+.entry-content h1,
+.entry-content h2,
+.entry-content h3 {
+  margin-bottom: 30px; }
+
+.entry-content h4,
+.entry-content h5 {
+  margin-bottom: 15px; }
+
+.entry-content ul,
+.entry-content ol {
+  padding-left: 1rem; }
+
+.entry-content blockquote cite {
+  color: #6c757d;
+  font-size: 0.875rem; }
+
+.entry-content table td {
+  border: 1px solid #ccc;
+  padding: 15px; }
+  .entry-content table td p {
+    margin-bottom: 0; }
+
+
+/*# sourceMappingURL=default_page.css.map*/

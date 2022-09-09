@@ -1,0 +1,35 @@
+@mixin fontSize($size) {
+  $root: 16;
+
+  font-size: $size/$root + rem;
+}
+
+@mixin lineHeight($size) {
+  $root: 16;
+
+  line-height: $size/$root + rem;
+}
+
+@mixin transform($transform) {
+  -ms-transform: $transform;
+  -webkit-transform: $transform;
+  transform: $transform;
+}
+
+@mixin transition($for: all, $time-in: 0.25s, $type: ease-out, $time-out: 0s) {
+  transition: $for $time-in $type $time-out;
+  -moz-transition: $for $time-in $type $time-out;
+  -webkit-transition: $for $time-in $type $time-out;
+  -o-transition: $for $time-in $type $time-out;
+}
+
+@mixin lineclamp($line-height, $max-height, $num-of-lines) {
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: $line-height;
+  max-height: $max-height + px;
+  -webkit-line-clamp: $num-of-lines;
+  -webkit-box-orient: vertical;
+}
